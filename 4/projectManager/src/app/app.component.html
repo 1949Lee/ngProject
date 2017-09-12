@@ -1,12 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<md-sidenav-container>
-  <md-sidenav #sidenav mode="over">
+<md-sidenav-container [class.dark-theme]="darked">
+  <md-sidenav  #sidenav mode="over">
     <app-sidebar></app-sidebar>
   </md-sidenav>
   <div class="site">
     <header>
-      <app-header (sidebarToggle)="sidenav.toggle()"></app-header>
+      <app-header (sidebarToggle)="sidenav.toggle()" (darkThemeToggle)='switchTheme($event)'></app-header>
     </header>
     <main>
       <!--sidenav.open()-->

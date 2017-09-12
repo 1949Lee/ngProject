@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import './src/theme-color.scss';
+md-sidenav-container.dark-theme{
+  background:black;
+}
 html,body,md-sidenav-container,.site{
   width:100%;
   height:100%;
@@ -18,6 +21,6 @@ main{
 .fill-remain-space{
   flex:1 1 auto;
 }
-a{
-  color: #40c4ff;
-}
+// a{
+//   color: #40c4ff;
+// }
