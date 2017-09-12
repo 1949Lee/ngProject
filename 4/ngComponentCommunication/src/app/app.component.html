@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h4>
+    Welcome to {{title}}!
+  </h4>
+</div>
+我是父组件
+<input type="text" name="search" [(ngModel)]="search">
+<br>
+<app-stock-seearch [keyWords]="search" (addCartStockInfo)="addCartStockInfoHandler($event)"></app-stock-seearch>
+<!--<span *ngIf="searchResult">搜索到的股票为{{searchResult.name}},价格是{{searchResult.price}}</span>-->
+<app-cart [boughtStock]="cartStock"></app-cart>
+<app-life [name]="lifeName">组件生命周期</app-life>

@@ -1,0 +1,36 @@
+<form [formGroup]="formModel" action="/register" (ngSubmit)="register()" method="post">
+  <div>用户名<input class="control" formControlName="userName" type="text" pattern="[a-zA-Z0-9]+"></div>
+  <span class="error"
+        [hidden]="(((!formModel.hasError('required','userName'))&&formModel.get('userName').touched))
+        ||formModel.get('userName').untouched">用户名必填
+  </span>
+  <!--注意minlength的小写，验证器大写-->
+  <span class="error"
+        [hidden]="((!(formModel.hasError('minlength','userName'))&&formModel.get('userName').touched))
+        ||formModel.get('userName').untouched">用户名至少6位
+  </span>
+  <span
+        [hidden]="!formModel.get('userName').pending">正在检测用户名是否可用...
+  </span>
+  <div>邮箱
+    <ul formArrayName="emails">
+      <li *ngFor="let email of formModel.get('emails').controls;let i = index;">
+        <input class="control" [formControlName]="i" type="email">
+      </li>
+    </ul>
+    <button type="button" (click)="addEmail()">添加邮箱</button>
+  </div>
+  <div>手机号<input class="control" formControlName="phone" type="number"></div>
+  <span class="error" [hidden]="!formModel.hasError('phone','phone')">{{formModel.getError('phone','phone')}}</span>
+  <div formGroupName="passwordInfo">
+    <div>密码<input class="control" formControlName="password" type="password"></div>
+    <span class="error" [hidden]="!formModel.hasError('required','passwordInfo.password')">密码必填</span>
+    <div>确认密码<input class="control" formControlName="passwordConfirm" type="password"></div>
+  </div>
+  <span class="error" [hidden]="!formModel.hasError('passwordConfirm','passwordInfo')">{{formModel.getError('passwordConfirm','passwordInfo')}}</span>
+  <div>
+    <button type="submit">注册</button>
+  </div>
+  <p>表单状态:{{formModel.status}}</p>
+
+</form>

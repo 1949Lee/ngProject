@@ -1,0 +1,11 @@
+<div class="parent">
+  我是父组件
+  <div>问候语<input type="text" [(ngModel)]="greeting"></div>
+  <div>用户姓名<input type="text" [(ngModel)]="user.name"></div>
+<app-life></app-life>
+<app-child [greeting]="greeting" [user]="user">
+  <div class="aquamarine" (click)="add()">我是蓝框 我被点击了{{clickCount}}次</div>
+  <div class="black">我是黑框</div>
+</app-child>
+</div>
+<div class="loader">{{loadingText}}</div>

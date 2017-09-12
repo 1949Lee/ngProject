@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<md-sidenav-container>
+  <md-sidenav #sidenav mode="over">
+    <app-sidebar></app-sidebar>
+  </md-sidenav>
+  <div class="site">
+    <header>
+      <app-header (sidebarToggle)="sidenav.toggle()"></app-header>
+    </header>
+    <main>
+      <!--sidenav.open()-->
+      <!--<button (click)="sidenav.toggle()">打开</button>-->
+      <router-outlet></router-outlet>
+    </main>
+    <footer>
+      <app-footer></app-footer>
+
+    </footer>
+
+  </div>
+</md-sidenav-container>

@@ -1,0 +1,13 @@
+<div class="child">
+  我是子组件
+  <h4>{{greeting}}</h4>
+  <div>用户姓名:{{user.name}}</div>
+  <div><input type="text" [(ngModel)]="message"></div>
+
+<div class="aquamarine-border">
+  <ng-content select=".aquamarine"></ng-content>
+</div>
+<div class="black-border">
+  <ng-content select=".black"></ng-content>
+</div>
+</div>

@@ -1,0 +1,30 @@
+<div class="page-content-wrapper">
+  <!-- BEGIN CONTENT BODY -->
+  <div class="page-content">
+    <!-- BEGIN PAGE HEADER-->
+    <h1 class="page-title"> {{pageTitle}}
+      <small>{{pageSubTitle}}</small>
+    </h1>
+    <div class="page-bar">
+      <ul class="page-breadcrumb">
+        <li>
+          <i class="icon-home"></i>
+          <a href="javascript:;">首页</a>
+          <!--<i class="fa fa-angle-right"></i>-->
+        </li>
+        <!--<li>-->
+        <!--<a href="#">Blank Page</a>-->
+        <!--<i class="fa fa-angle-right"></i>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<span>Page Layouts</span>-->
+        <!--</li>-->
+      </ul>
+    </div>
+    <!-- END PAGE HEADER-->
+    <!--<iframe src="default.html" id="pageContent" frameBorder="no" width="100%" scrolling="no" height="auto" onload="reInitIframe()" onresize="reInitIframe()" runat="server"></iframe>-->
+    <div class="page-content-body fade-in-up">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

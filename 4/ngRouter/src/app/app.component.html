@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="text-center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  <a [routerLink]="['/home']" [queryParams]="{userStatus:'master'}">主页</a>
+  <a [routerLink]="['/stock',1]">股票</a>
+  <a [routerLink]="[{outlets:{consult:'consult'}}]">开始咨询</a>
+  <a [routerLink]="[{outlets:{consult:null}}]">结束咨询</a>
+  <br/>
+  <button (click)="toDis()">跳转</button>
+</div>
+<router-outlet></router-outlet>
+<router-outlet name="consult"></router-outlet>

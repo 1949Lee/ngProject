@@ -1,0 +1,1 @@
+<span *ngFor="let starCls of stars; let i = index" class="fa fa-star" [class.changeCursor]="!readonly" [class.fa-star-o]="starCls" (click)="changeLevel(i+1)"></span>

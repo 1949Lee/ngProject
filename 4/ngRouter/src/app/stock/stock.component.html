@@ -1,0 +1,11 @@
+<div class="text-center">
+<p>
+  这里是股票详情
+</p>
+<p>{{stock.name}}</p>
+  <!--<button (click)="mark()">加入收藏夹</button>-->
+  <button (click)="marked = true ">加入收藏夹</button>
+<button [routerLink]="['./favorites']">加载收藏夹</button>
+<button [routerLink]="['./companyInfo','DOTA2']">加载公司信息</button>
+<router-outlet></router-outlet>
+</div>

@@ -1,0 +1,17 @@
+<form #myForm="ngForm" action="/register" (ngSubmit)="register(myForm.value)" method="post" ngForm>
+  <div>用户名<input #userName ngModel name="userName" type="text" pattern="[a-zA-Z0-9]+"></div>
+  <div>邮箱<input #email ngModel name="email" type="email"></div>
+  <div>手机号<input #phone require mobile ngModel name="phone" type="number"></div>
+  <span class="error" [hidden]="!myForm.hasError('require','phone')">sddasdas</span>
+  <div ngModelGroup="passwordInfo">
+    <div>密码<input #password ngModel name="password" type="password"></div>
+    <div>确认密码<input #passwordConfirm ngModel name="passwordConfirm" type="password"></div>
+  </div>
+  <button type="submit">注册</button>
+</form>
+<div>
+  {{myForm.value|json}}
+</div>
+<div>
+  用户名为:{{userName.value}}
+</div>

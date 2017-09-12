@@ -1,0 +1,22 @@
+<p >
+  bind works!
+</p>
+<button (click)="doOnClick($event)">按钮</button>
+<input class="a"
+       [ngClass]="{b:true,c:true}"
+       [class.d]="dClassFlag"
+       type="text"
+       [style.font-size.em]="dClassFlag? 3: 1"
+       [ngStyle]="inputStyle"
+       name="userName"
+       [(ngModel)]="text">
+<p>{{text}}</p>
+<input class="a"
+       #userID
+       [ngClass]="{b:true,c:true}"
+       [class.d]="dClassFlag"
+       type="text"
+       [style.font-size.em]="dClassFlag? 3: 1"
+       [ngStyle]="inputStyle"
+       name="userID"
+       (keyup)="doOnUpID(userID.value)">
