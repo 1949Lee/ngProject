@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   darked = false;
   switchTheme(darked) {
+    console.log(darked);
     this.darked = darked;
   }
 }

@@ -1,0 +1,45 @@
+<form>
+  <md-card>
+    <md-card-header>
+      <md-card-title>
+        注册
+      </md-card-title>
+    </md-card-header>
+    <md-card-content>
+      <md-input-container 
+      class="full-width"
+      floatPlaceholder="never">
+        <md-icon mdPrefix>email</md-icon>
+        <input mdInput placeholder="您的邮箱" type="text">
+      </md-input-container>
+      <md-input-container 
+      class="full-width"
+      floatPlaceholder="never">
+        <md-icon mdPrefix>perm_identity</md-icon>
+        <input mdInput placeholder="您的用户名" type="text">
+      </md-input-container>
+      <md-input-container 
+      class="full-width"
+      floatPlaceholder="never">
+        <md-icon mdPrefix>lock</md-icon>
+        <input mdInput placeholder="您的密码" type="pasword">
+      </md-input-container>
+      <md-input-container 
+      class="full-width"
+      floatPlaceholder="never">
+        <md-icon mdPrefix>lock</md-icon>
+        <input mdInput placeholder="确认密码" type="pasword">
+      </md-input-container>
+      <md-grid-list cols="4" rowHeight="1:1">
+        <md-grid-tile *ngFor="let item of items">
+          <md-icon class='avatar' [svgIcon]="item"></md-icon>
+        </md-grid-tile>
+      </md-grid-list>
+      <button md-raised-button color="primary" type="button">注册</button>
+    </md-card-content>
+    <md-card-actions>
+      <p class="text-right">已有账户？点击<a [routerLink]="['/login']"  href="">登录</a></p>
+      <p class="text-right">忘记密码？点击<a href="">找回密码</a></p>
+    </md-card-actions>
+  </md-card>
+  </form>
