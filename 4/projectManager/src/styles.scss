@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import './src/theme-color.scss';
 md-sidenav-container.dark-theme{
   background:black;
@@ -23,4 +24,7 @@ main{
 }
 // a{
 //   color: #40c4ff;
+// }
+// md-dialog-container{
+//   background: $primary-color;
 // }
