@@ -4,6 +4,7 @@
   *ngFor="let taskList of taskLists">
     <app-task-header [header]="taskList.name"></app-task-header>
     <app-task-item
+    [item]="task"
     *ngFor="let task of taskList.tasks">
     </app-task-item>
   </app-task-list>

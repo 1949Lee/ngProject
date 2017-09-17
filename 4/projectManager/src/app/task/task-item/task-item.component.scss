@@ -1,0 +1,43 @@
+@import './src/theme-color.scss';
+md-icon.avatar{
+    overflow: hidden;
+    width: 4rem;
+    height: 4rem;
+    border-radius:50%;
+    margin: 1rem; 
+    order:3;
+}
+.emergency{
+    border-left:3px solid $task-level-emergency-color;
+}
+.important{
+    border-left:3px solid $task-level-important-color;
+}
+.normal{
+    border-left:3px solid $task-level-normal-color;
+}
+.completed-status{
+    order:-1;
+}
+.completed{
+    text-decoration: line-through;
+    color: $secondary-text-color;
+    opacity: 0.6;
+}
+.alarm{
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+.due-date{
+    background-color:$primary-color-dark;
+    color:  $primary-color-text;
+}
+.dark-theme .due-date{
+    background-color:#666666;
+    color:  $primary-color-text;
+}
+md-list-item{
+    padding:0 2px 0;
+    border-bottom: 0.2rem solid $secondary-border-color;
+    border-radius:0.1rem; 
+}
