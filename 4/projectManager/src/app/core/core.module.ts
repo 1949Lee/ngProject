@@ -9,6 +9,7 @@ import { loadSVGResources } from '../utils/svg.utils'
 import { MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 
+import 'hammerjs';
 
 @NgModule({
   imports: [

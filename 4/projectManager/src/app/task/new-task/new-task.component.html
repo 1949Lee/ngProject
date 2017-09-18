@@ -1,0 +1,28 @@
+<form>
+  <h2 md-dialog-title>{{title}}</h2>
+  <div md-dialog-content>
+    <md-input-container class="full-width" floatPlaceholder="never">
+      <!-- <md-icon mdPrefix>lock</md-icon> -->
+      <input mdInput placeholder="任务内容" type="text">
+    </md-input-container>
+    <md-radio-group>
+      <md-radio-button class='priority-radio' *ngFor="let priority of priorities" value="priority.value">
+        {{priority.label}}
+      </md-radio-button>
+    </md-radio-group>
+    <md-input-container class="full-width" floatPlaceholder="never">
+      <input mdInput [mdDatepicker]="duDatepicker" type="text" placeholder="截止日期">
+      <button mdSuffix [mdDatepickerToggle]="duDatepicker"></button>
+    </md-input-container>
+    <md-datepicker #duDatepicker></md-datepicker>
+    <md-input-container class="full-width" floatPlaceholder="never">
+      <input mdInput [mdDatepicker]="remindDatepicker" type="text" placeholder="提醒日期">
+      <button mdSuffix [mdDatepickerToggle]="remindDatepicker"></button>
+    </md-input-container>
+    <md-datepicker #remindDatepicker></md-datepicker>
+  </div>
+  <div md-dialog-actions>
+    <button type="button" md-button md-dialog-close>取消</button>
+    <button type="button" md-raised-button color="primary" (click)="save()">保存</button>
+  </div>
+</form>

@@ -3,6 +3,8 @@ class="card"
 *ngFor="let project of projects" 
 [item]="project"
 (onInvite)="openInviteDialog()"
+(modifyProject)="modifyProject()"
+(deleteProject)="deleteProject()"
 >
 
 </app-project-item>

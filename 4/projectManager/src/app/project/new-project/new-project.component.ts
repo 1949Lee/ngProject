@@ -7,6 +7,7 @@ import { MD_DIALOG_DATA,MdDialogRef} from "@angular/material";
   styleUrls: ['./new-project.component.scss']
 })
 export class NewProjectComponent implements OnInit {
+  title: any;
 
   constructor(
     @Inject(MD_DIALOG_DATA)private data,
@@ -15,6 +16,7 @@ export class NewProjectComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.data);
+    this.title = this.data.title;
   }
   save(){
     this.dialogRef.close(`save`);

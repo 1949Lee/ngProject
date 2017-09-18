@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MdDialog } from '@angular/material';
+import { NewTaskComponent } from '../new-task/new-task.component';
+import { CopyTaskComponent } from '../copy-task/copy-task.component';
+import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
+import { NewTaskListComponent } from '../new-task-list/new-task-list.component';
 
 @Component({
   selector: 'app-task-home',
@@ -70,9 +75,53 @@ export class TaskHomeComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(private dialog:MdDialog) { }
 
   ngOnInit() {
+  }
+  newTask(){
+    const dialogRef = this.dialog.open(NewTaskComponent,{
+      width:'20rem',
+      data:{
+        title:'新建任务',
+      }
+    });
+  }
+  moveAllLists(){
+    const dialogRef = this.dialog.open(CopyTaskComponent,{
+      data:{
+        lists:this.taskLists
+      }
+    })
+  }
+  modifyTask(task){
+    const dialogRef =  this.dialog.open(NewTaskComponent,{
+      width:'20rem',
+      data:{
+        title:'修改任务',
+        task:task
+      }
+    });
+  }
+  deleteList(){
+    const dialogRef =  this.dialog.open(ConfirmDialogComponent,{data:{title:'删除该项目吗',content:'您确定删除该项目吗?'}});
+    dialogRef.afterClosed().subscribe(result => console.log(result));
+  }
+  modufyListName(){
+    const dialogRef =  this.dialog.open(NewTaskListComponent,{
+      data:{
+        title:'修改列表名称'
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => console.log(result));
+  }
+  openNewTaskList(){
+    const dialogRef =  this.dialog.open(NewTaskListComponent,{
+      data:{
+        title:'新建列表'
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => console.log(result));
   }
 
 }
