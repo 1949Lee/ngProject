@@ -39,3 +39,9 @@ export class AppComponent {
     this.oc.themeClass = this.darked ? 'dark-theme' :null;
   }
 }
+
+class Person{
+  constructor(){
+    
+  }
+}

@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostBinding, HostListener } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostBinding, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { cardAnimations } from '../../animations/card.animations';
 
 @Component({
   selector: 'app-project-item',
   templateUrl: './project-item.component.html',
   styleUrls: ['./project-item.component.scss'],
+  changeDetection:ChangeDetectionStrategy.OnPush,
   animations: [
     cardAnimations
   ]
