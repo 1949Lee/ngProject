@@ -6,6 +6,11 @@
   'normal': item.priority === 1
 }"
 (click)="onItemClick()"
+[app-draggable]='true'
+[dragTag]="'task-item'"
+[dragData]='item'
+[draggedCls]="'drag-start'"
+
 >
   <md-checkbox
   class="completed-status"

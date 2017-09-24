@@ -17,3 +17,10 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
+.drag-start{
+    opacity: 0.6;
+    border: 2px dashed red;
+}
+.drag-enter{
+    background-color: dimgray;
+}

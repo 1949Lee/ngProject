@@ -36,6 +36,13 @@ md-icon.avatar{
     background-color:#666666;
     color:  $primary-color-text;
 }
+.drag-start{
+    opacity: 0.6;
+    border: 2px dashed red;
+}
+.drage-enter{
+    background-color: dimgray;
+}
 md-list-item{
     padding:0 2px 0;
     border-bottom: 0.2rem solid $secondary-border-color;

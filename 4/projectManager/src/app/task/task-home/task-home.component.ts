@@ -10,8 +10,8 @@ import { slideToRight } from '../../animations/routing.animations';
   selector: 'app-task-home',
   templateUrl: './task-home.component.html',
   styleUrls: ['./task-home.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  animations:[
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [
     slideToRight
   ]
 
@@ -26,20 +26,20 @@ export class TaskHomeComponent implements OnInit {
         {
           id: 1,
           desc: '任务三:完成管理界面搭建',
-          priority:2,
-          completed:true,
+          priority: 2,
+          completed: true,
           owner: {
             id: 1,
             name: '张三',
             avatar: 'avatars:svg-11'
           },
           dueDate: new Date(),
-          reminder:new Date()
+          reminder: new Date()
         },
         {
           id: 2, desc: '任务四:完成统计界面搭建',
-          completed:false,
-          priority:1,
+          completed: false,
+          priority: 1,
           owner: {
             id: 1,
             name: '李四',
@@ -56,8 +56,8 @@ export class TaskHomeComponent implements OnInit {
         {
           id: 1,
           desc: '任务一:完成路由搭建',
-          completed:false,
-          priority:3,
+          completed: false,
+          priority: 3,
           owner: {
             id: 1,
             name: '张三',
@@ -68,8 +68,8 @@ export class TaskHomeComponent implements OnInit {
         {
           id: 2,
           desc: '任务二:完成首页界面搭建',
-          completed:false,
-          priority:3,
+          completed: false,
+          priority: 3,
           owner: {
             id: 1,
             name: '张三',
@@ -80,54 +80,66 @@ export class TaskHomeComponent implements OnInit {
       ]
     }
   ]
-  @HostBinding('@routeAnimations') routeAnimateState; 
-  constructor(private dialog:MdDialog,private cd:ChangeDetectorRef) { }
+  @HostBinding('@routeAnimations') routeAnimateState;
+  constructor(private dialog: MdDialog, private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
   }
-  newTask(){
-    const dialogRef = this.dialog.open(NewTaskComponent,{
-      width:'20rem',
-      data:{
-        title:'新建任务',
+  newTask() {
+    const dialogRef = this.dialog.open(NewTaskComponent, {
+      width: '20rem',
+      data: {
+        title: '新建任务',
       }
     });
   }
-  moveAllLists(){
-    const dialogRef = this.dialog.open(CopyTaskComponent,{
-      data:{
-        lists:this.taskLists
+  moveAllLists() {
+    const dialogRef = this.dialog.open(CopyTaskComponent, {
+      data: {
+        lists: this.taskLists
       }
     })
   }
-  modifyTask(task){
-    const dialogRef =  this.dialog.open(NewTaskComponent,{
-      width:'20rem',
-      data:{
-        title:'修改任务',
-        task:task
+  modifyTask(task) {
+    const dialogRef = this.dialog.open(NewTaskComponent, {
+      width: '20rem',
+      data: {
+        title: '修改任务',
+        task: task
       }
     });
   }
-  deleteList(){
-    const dialogRef =  this.dialog.open(ConfirmDialogComponent,{data:{title:'删除该项目吗',content:'您确定删除该项目吗?'}});
+  deleteList() {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, { data: { title: '删除该项目吗', content: '您确定删除该项目吗?' } });
     dialogRef.afterClosed().subscribe(result => console.log(result));
   }
-  modufyListName(){
-    const dialogRef =  this.dialog.open(NewTaskListComponent,{
-      data:{
-        title:'修改列表名称'
+  modufyListName() {
+    const dialogRef = this.dialog.open(NewTaskListComponent, {
+      data: {
+        title: '修改列表名称'
       }
     });
     dialogRef.afterClosed().subscribe(result => console.log(result));
   }
-  openNewTaskList(){
-    const dialogRef =  this.dialog.open(NewTaskListComponent,{
-      data:{
-        title:'新建列表'
+  openNewTaskList() {
+    const dialogRef = this.dialog.open(NewTaskListComponent, {
+      data: {
+        title: '新建列表'
       }
     });
     dialogRef.afterClosed().subscribe(result => console.log(result));
   }
 
+  handleMove(srcData, taskLists) {
+    switch (srcData.tag) {
+      case 'task-item':
+      console.log(`Moved task-item`);
+        break;
+      case 'task-list':
+      console.log(`Moved task-list`);
+        break;
+      default:
+        break;
+    }
+  }
 }

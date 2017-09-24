@@ -1,6 +1,14 @@
 <div class="task-home-container">
   <app-task-list
   class="task-lsit-container"
+  app-droppable
+  [dropTags]="['task-item','task-list']"
+  [dragEnterCls]="'drag-enter'"
+  [app-draggable]='true'
+  [dragTag]="'task-list'"
+  [dragData]='taskList'
+  [draggedCls]="'drag-start'"
+  (dropped)="handleMove($event,taskLists)" 
   *ngFor="let taskList of taskLists">
     <app-task-header [header]="taskList.name" 
     (newTask)="newTask()" 
