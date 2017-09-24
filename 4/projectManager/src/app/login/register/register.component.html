@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form,$event)">
   <md-card>
     <md-card-header>
       <md-card-title>
@@ -10,32 +10,35 @@
       class="full-width"
       floatPlaceholder="never">
         <md-icon mdPrefix>email</md-icon>
-        <input mdInput placeholder="您的邮箱" type="text">
+        <input mdInput placeholder="您的邮箱" type="text" formControlName="email">
       </md-input-container>
       <md-input-container 
       class="full-width"
       floatPlaceholder="never">
         <md-icon mdPrefix>perm_identity</md-icon>
-        <input mdInput placeholder="您的用户名" type="text">
+        <input mdInput placeholder="您的用户名" type="text" formControlName="userName">
       </md-input-container>
       <md-input-container 
       class="full-width"
       floatPlaceholder="never">
         <md-icon mdPrefix>lock</md-icon>
-        <input mdInput placeholder="您的密码" type="pasword">
+        <input mdInput placeholder="您的密码" type="pasword" formControlName="password">
       </md-input-container>
       <md-input-container 
       class="full-width"
       floatPlaceholder="never">
         <md-icon mdPrefix>lock</md-icon>
-        <input mdInput placeholder="确认密码" type="pasword">
+        <input mdInput placeholder="确认密码" type="pasword" formControlName="confirmPassword">
       </md-input-container>
-      <md-grid-list cols="4" rowHeight="1:1">
-        <md-grid-tile *ngFor="let item of items">
-          <md-icon class='avatar' [svgIcon]="item"></md-icon>
-        </md-grid-tile>
-      </md-grid-list>
-      <button md-raised-button color="primary" type="button">注册</button>
+      <app-image-list-select
+        [title]="'选择头像'"
+        [rowHeight]="'1:1'"
+        [cols]='6'
+        [items]='items'
+        [userSVGIcon]='true'
+        formControlName='avatar'
+      ></app-image-list-select>
+      <button md-raised-button color="primary" type="submit">注册</button>
     </md-card-content>
     <md-card-actions>
       <p class="text-right">已有账户？点击<a [routerLink]="['/login']"  href="">登录</a></p>

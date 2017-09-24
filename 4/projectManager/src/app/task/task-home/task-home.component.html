@@ -9,6 +9,7 @@
   [dragData]='taskList'
   [draggedCls]="'drag-start'"
   (dropped)="handleMove($event,taskLists)" 
+  [ngStyle]="{order:taskList.order}"
   *ngFor="let taskList of taskLists">
     <app-task-header [header]="taskList.name" 
     (newTask)="newTask()" 
@@ -16,6 +17,7 @@
     (deleteList)="deleteList()"
     (modifyListName)="modufyListName()"
     ></app-task-header>
+    <app-quick-task (quikTask)='handleQuickTask($event)'></app-quick-task>
     <app-task-item
     (modifyTask)="modifyTask(task)"
     [item]="task"

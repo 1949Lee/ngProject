@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form,$event)">
 <md-card>
   <md-card-header>
     <md-card-title>
@@ -10,15 +10,16 @@
     class="full-width"
     floatPlaceholder="never">
       <md-icon mdPrefix>email</md-icon>
-      <input mdInput placeholder="您的邮箱" type="text">
+      <input mdInput placeholder="您的邮箱" type="text" formControlName="email">
+      <!-- <md-error>{{form.controls['email'].errors|json}}</md-error> -->
     </md-input-container>
     <md-input-container 
     class="full-width"
     floatPlaceholder="never">
       <md-icon mdPrefix>lock</md-icon>
-      <input mdInput placeholder="您的密码" type="pasword">
+      <input mdInput placeholder="您的密码" type="pasword" formControlName="password">
     </md-input-container>
-    <button md-raised-button color="primary" type="button">登录</button>
+    <button md-raised-button color="primary" type="button" [disabled]="!form.valid">登录</button>
   </md-card-content>
   <md-card-actions>
     <p class="text-right">还没有账户？点击<a [routerLink]="['/register']" href="">立即注册</a></p>

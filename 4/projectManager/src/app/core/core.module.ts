@@ -12,13 +12,15 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 import 'hammerjs';
 import 'rxjs/add/operator/take';
+import { ServicesModule } from '../services/services.module';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
     SharedModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServicesModule.forRoot(),
   ],
   exports: [
     SharedModule,

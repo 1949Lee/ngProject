@@ -1,0 +1,47 @@
+md-Icon.avatar{
+    overflow: hidden;
+    width:3rem;
+    height:3rem;
+    border-radius: 50%;
+    margin:0px;
+}
+.scroll-container{
+    overflow: scroll;
+    height: 12.5rem;
+}
+.image-container{
+    position: relative;
+    display: inline-block;
+}
+.image-container img{
+    display: block;
+}
+.image-container .after{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:none;
+    color:#FFF;
+}
+.image-container:hover .after{
+    display:block;
+    background:rgba(0,0,0,.6);
+}
+
+.image-container .after .zoom{
+    color:#DDD;
+    font-size:3rem;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin:-2rem 0 0 -1.3rem;
+    height: 3rem;
+    width: 2.7rem;
+    cursor: pointer;
+}
+
+.image-container .after .zoom:hover{
+    color:#FFF;
+}
