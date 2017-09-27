@@ -32,12 +32,12 @@
       每日佳句
     </md-card-title>
     <md-card-subtitle>
-      在这里你很难预知将会发生的事。
+      {{quote.cn}}
     </md-card-subtitle>
   </md-card-header>
-  <img md-card-image src="/assets/quote/quote-bg.jpg" alt="">
+  <img md-card-image [src]="quote.pic" alt="quote image">
   <md-card-content>
-    It's hard to predict what's going to happen here.
+    {{quote.en}}
   </md-card-content>
 </md-card>
 </form>

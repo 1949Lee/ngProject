@@ -29,6 +29,12 @@ import { ServicesModule } from '../services/services.module';
     SidebarComponent,
     AppRoutingModule
   ],
+  providers:[{
+    provide:'BASE_CONFIG',
+    useValue:{
+      uri:'http://localhost:3000'
+    }
+  }],
   declarations: [HeaderComponent, SidebarComponent, FooterComponent]
 })
 export class CoreModule {
