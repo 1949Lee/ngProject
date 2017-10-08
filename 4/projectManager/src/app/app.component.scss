@@ -1,8 +1,7 @@
-@import './src/theme-color.scss';
-md-sidenav{
-    width:20%;
-    // background: $primary-color-light;
+md-sidenav-container.myapp-dark-theme {
+  background: black;
 }
-main{
-    overflow-y: auto;
+
+md-sidenav {
+  width: 300px;
 }

@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/out
 
 # dependencies
 /node_modules
@@ -29,10 +30,8 @@
 /connect.lock
 /coverage
 /libpeerconnection.log
-npm-debug.log
-testem.log
+*.log
 /typings
-yarn-error.log
 
 # e2e
 /e2e/*.js
@@ -41,3 +40,6 @@ yarn-error.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# generated docs
+/doc

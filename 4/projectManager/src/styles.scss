@@ -1,30 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
-// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import './src/theme-color.scss';
-md-sidenav-container.dark-theme{
-  background:black;
+@import 'theme.scss';
+
+html, body, app-root, md-sidenav-container, .site {
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
-html,body,md-sidenav-container,.site{
-  width:100%;
-  height:100%;
-  margin:0;
-}
-.site{
+
+.site {
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
 }
-main{
-  flex:1;
+
+main {
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.full-width{
+
+.full-width {
   width: 100%;
 }
-.fill-remain-space{
-  flex:1 1 auto;
+
+.fill-remaining-space {
+  // 使用 flexbox 填充剩余空间
+  // @angular/material 中的很多控件使用了 flex 布局
+  flex: 1 1 auto;
 }
-// a{
-//   color: #40c4ff;
-// }
-// md-dialog-container{
-//   background: $primary-color;
-// }
