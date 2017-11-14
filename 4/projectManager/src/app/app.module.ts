@@ -4,6 +4,7 @@ import {CoreModule} from './core';
 import {SharedModule} from './shared';
 import {LoginModule} from './login';
 import {AppComponent} from './app.component';
+import { ProjectModule } from 'app/project';
 
 @NgModule({
   declarations: [
