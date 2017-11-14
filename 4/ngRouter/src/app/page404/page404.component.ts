@@ -15,8 +15,8 @@ export class Page404Component implements OnInit {
   }
 
   ngOnInit() {
-    this.title = this.routerInfo.snapshot.data[0]['title'];
-    this.content = this.routerInfo.snapshot.data[0]['content'];
+    this.title = this.routerInfo.snapshot.data['title'];
+    this.content = this.routerInfo.snapshot.data['content'];
   }
 
 }

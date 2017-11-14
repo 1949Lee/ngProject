@@ -22,7 +22,7 @@ export class StockComponent implements OnInit {
       this.stock = data.stock;
     })
 
-    // this.routerInfo.params.subscribe((param:Params)=>{this.stock = data.id})
+    // this.routerInfo.params.subscribe((param:Params)=>{this.stock = param.id})
   }
 
   mark(){

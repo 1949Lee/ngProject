@@ -30,7 +30,7 @@ const routes: Routes = [
      stock:RoutResolveGuard
     }
   },
-  { path:'**',component:Page404Component, data:[{title:'起奏陛下',content:'网址输错了'}]}//这个一定要放在最后！！！
+  { path:'**',component:Page404Component, data:{title:'起奏陛下',content:'网址输错了'}}//这个一定要放在最后！！！
 ];
 
 @NgModule({

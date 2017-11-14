@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -13,6 +13,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.status = this.routerInfo.snapshot.queryParams['userStatus'];
+    // this.routerInfo.queryParams.subscribe((param:Params) =>{
+    //   console.log(param);
+    //   this.status = param['userStatus'];
+    // })
   }
 
 }

@@ -6,7 +6,7 @@
   <a [routerLink]="['/home']" [queryParams]="{userStatus:'master'}">主页</a>
   <a [routerLink]="['/stock',1]">股票</a>
   <a [routerLink]="[{outlets:{consult:'consult'}}]">开始咨询</a>
-  <a [routerLink]="[{outlets:{consult:null}}]">结束咨询</a>
+  <a [routerLink]="[{outlets:{primary:'home',consult:null}}]">结束咨询</a>
   <br/>
   <button (click)="toDis()">跳转</button>
 </div>
