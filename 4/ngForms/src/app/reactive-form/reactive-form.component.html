@@ -12,6 +12,10 @@
   <span
         [hidden]="!formModel.get('userName').pending">正在检测用户名是否可用...
   </span>
+  <span class="error"
+        [hidden]="((!(formModel.hasError('userNameAvailabel','userName'))&&formModel.get('userName').touched))
+        ||formModel.get('userName').untouched">用户名已存在
+  </span>
   <div>邮箱
     <ul formArrayName="emails">
       <li *ngFor="let email of formModel.get('emails').controls;let i = index;">
@@ -29,8 +33,9 @@
   </div>
   <span class="error" [hidden]="!formModel.hasError('passwordConfirm','passwordInfo')">{{formModel.getError('passwordConfirm','passwordInfo')}}</span>
   <div>
-    <button type="submit">注册</button>
+    <button type="submit" [disabled]="formModel.invalid">注册</button>
   </div>
   <p>表单状态:{{formModel.status}}</p>
+  <p>远程验证状态:{{formModel.get('userName').done}}</p>
 
 </form>

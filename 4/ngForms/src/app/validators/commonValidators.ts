@@ -16,7 +16,7 @@ export function phoneValidator(error:any):any {
 export function userAvailableAsyncValidator(error:any):any {
   return function (userName: FormControl) {
     let value = (userName.value || '') + '';
-    let userNameStr = "111111";
+    let userNameStr = "1949Lee";
     let valid = userNameStr != value;
     console.log('userName是否校验通过:'+valid);
     return Observable.of(valid ? null : error).delay(2000);
