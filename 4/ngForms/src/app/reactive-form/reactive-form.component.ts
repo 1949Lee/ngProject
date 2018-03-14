@@ -44,4 +44,21 @@ export class ReactiveFormComponent implements OnInit {
 
   }
 
+  setFormModel(){
+    console.log(this.formModel);
+    this.formModel.get('userName').setValue('1949Lee14');//某个赋值
+
+    //整体赋值
+    this.formModel.setValue({
+      userName: '1949Lee14',
+      emails: ['lijiaxuan0811@hotmail.com'],
+      phone: '12110269062',
+      passwordInfo: {
+        password: '1',
+        passwordConfirm: '1'
+      }
+    });
+    console.log(this.formModel.value);//表单的值
+  }
+
 }
